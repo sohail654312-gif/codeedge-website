@@ -28,3 +28,7 @@ body{background:#050914}
 .breadcrumbs{color:#c9d7e8}.breadcrumbs a{color:#dbe8f6}
 
 .breadcrumbs span{color:#fff}
+
+/* Decorative breadcrumb separators are visual spacing, not text. */
+.breadcrumbs>span:not(:last-child){display:none}
+.breadcrumbs>span:last-child{border-left:1px solid rgba(201,215,232,.45);padding-left:9px}
