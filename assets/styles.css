@@ -18,3 +18,8 @@ body{background:#050914}
 .qualify{background:#0b1730}
 .btn-secondary{background:#0b1730}
 .hero h1 span,.accent{background:none;color:#68e3ff;-webkit-background-clip:initial;background-clip:initial;-webkit-text-fill-color:currentColor}
+
+/* Keep decorative glow layers outside text backgrounds so contrast remains testable and reliable. */
+.hero,.closing{background:#050914}
+.hero:after,.closing:after,body:before{display:none}
+.hero-grid>div:first-child,.closing .container{background:#050914}
