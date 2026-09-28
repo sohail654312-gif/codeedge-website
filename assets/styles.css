@@ -26,3 +26,5 @@ body{background:#050914}
 
 /* High-contrast breadcrumb trail. */
 .breadcrumbs{color:#c9d7e8}.breadcrumbs a{color:#dbe8f6}
+
+.breadcrumbs span{color:#fff}
