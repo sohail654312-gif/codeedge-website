@@ -31,7 +31,7 @@ jobs:
           for path in / /business-os/ /contact/ /industries/plumbers/ /resources/what-does-an-ai-receptionist-do/; do
             curl --fail --silent --show-error "http://127.0.0.1:4173$path" >/dev/null
           done
-          npx --yes pa11y@8 http://127.0.0.1:4173/ --standard WCAG2AA --threshold 0
-          npx --yes pa11y@8 http://127.0.0.1:4173/contact/ --standard WCAG2AA --threshold 0
+          npx --yes pa11y@8 http://127.0.0.1:4173/ --runner axe --standard WCAG2AA --threshold 0
+          npx --yes pa11y@8 http://127.0.0.1:4173/contact/ --runner axe --standard WCAG2AA --threshold 0
           npx --yes lighthouse@12 http://127.0.0.1:4173/ --quiet --output=json --output-path=/tmp/lighthouse.json --chrome-flags="--headless --no-sandbox --disable-gpu"
           python scripts/lighthouse_gate.py /tmp/lighthouse.json
