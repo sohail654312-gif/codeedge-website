@@ -1,7 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Production domain is still unconfirmed. Replace consistently before launch if different. -->
-  <url><loc>https://www.codeedge.co.uk/</loc></url>
-  <url><loc>https://www.codeedge.co.uk/privacy.html</loc></url>
-  <url><loc>https://www.codeedge.co.uk/terms.html</loc></url>
+  <url><loc>https://codeedge.online/</loc><lastmod>2026-09-28</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://codeedge.online/business-os/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/how-it-works/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/pricing/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/results/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/about/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/contact/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/resources/</loc><lastmod>2026-09-28</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://codeedge.online/websites/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/local-seo/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/google-business-profile/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/reputation/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/ai-receptionist/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/crm-leads/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/whatsapp/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/bookings/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/automation/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/business-visibility/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/industries/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/industries/plumbers/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/industries/heating-engineers/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/industries/electricians/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/industries/builders/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/industries/roofers/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/industries/clinics/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/resources/missed-calls-plumbing-business/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/resources/does-a-plumber-need-a-website-2026/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/resources/website-vs-google-business-profile/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/resources/what-does-an-ai-receptionist-do/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/resources/ai-alongside-existing-receptionist/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/resources/what-is-a-crm-for-small-trades-business/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/resources/how-trades-businesses-follow-up-quotes/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/privacy/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/terms/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/cookie-policy/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
 </urlset>
