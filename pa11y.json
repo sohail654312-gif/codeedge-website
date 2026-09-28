@@ -1,0 +1,11 @@
+{
+  "standard": "WCAG2AA",
+  "threshold": 0,
+  "chromeLaunchConfig": {
+    "args": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--disable-dev-shm-usage"
+    ]
+  }
+}
