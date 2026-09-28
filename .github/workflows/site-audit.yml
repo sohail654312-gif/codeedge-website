@@ -1,0 +1,37 @@
+name: Site Audit
+on:
+  push:
+    branches: [main, codeedge-online-phase-1]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Static production audit
+        run: python scripts/site_audit.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Browser smoke, WCAG and Lighthouse
+        run: |
+          python -m http.server 4173 >/tmp/codeedge-http.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID || true' EXIT
+          sleep 2
+          for path in / /business-os/ /contact/ /industries/plumbers/ /resources/what-does-an-ai-receptionist-do/; do
+            curl --fail --silent --show-error "http://127.0.0.1:4173$path" >/dev/null
+          done
+          npx --yes pa11y@8 http://127.0.0.1:4173/ --standard WCAG2AA --threshold 0
+          npx --yes pa11y@8 http://127.0.0.1:4173/contact/ --standard WCAG2AA --threshold 0
+          npx --yes lighthouse@12 http://127.0.0.1:4173/ --quiet --output=json --output-path=/tmp/lighthouse.json --chrome-flags="--headless --no-sandbox --disable-gpu"
+          python scripts/lighthouse_gate.py /tmp/lighthouse.json
