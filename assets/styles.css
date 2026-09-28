@@ -23,3 +23,6 @@ body{background:#050914}
 .hero,.closing{background:#050914}
 .hero:after,.closing:after,body:before{display:none}
 .hero-grid>div:first-child,.closing .container{background:#050914}
+
+/* High-contrast breadcrumb trail. */
+.breadcrumbs{color:#c9d7e8}.breadcrumbs a{color:#dbe8f6}
