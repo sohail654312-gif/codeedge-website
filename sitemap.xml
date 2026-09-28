@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Production domain is still unconfirmed. Replace consistently before launch if different. -->
-  <url><loc>https://www.codeedge.co.uk/</loc></url>
-  <url><loc>https://www.codeedge.co.uk/privacy.html</loc></url>
-  <url><loc>https://www.codeedge.co.uk/terms.html</loc></url>
+  <url><loc>https://codeedge.online/</loc><lastmod>2026-09-28</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://codeedge.online/business-os/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/how-it-works/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/websites/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/local-seo/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/ai-receptionist/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/crm-leads/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/pricing/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/about/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/results/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/resources/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/contact/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/privacy/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/terms/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
+  <url><loc>https://codeedge.online/cookie-policy/</loc><lastmod>2026-09-28</lastmod><changefreq>monthly</changefreq></url>
 </urlset>
