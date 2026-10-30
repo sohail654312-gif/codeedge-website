@@ -14,7 +14,9 @@
   panel.setAttribute('aria-label', 'Analytics preferences');
   panel.hidden = true;
   panel.innerHTML = '<div class="container"><h2>Optional website analytics</h2><p>With your permission, Google Analytics helps us understand page visits and use of our contact buttons. Analytics stays off unless you accept. You can change your choice at any time. <a href="/privacy/">Privacy policy</a></p><div class="analytics-actions"><button type="button" class="btn btn-secondary" data-analytics-accept>Accept analytics</button><button type="button" class="btn btn-secondary" data-analytics-reject>Reject analytics</button></div></div>';
-  document.body.append(panel);
+  const header = document.querySelector('.site-header');
+  if (header) header.after(panel);
+  else document.body.prepend(panel);
   const settings = document.createElement('button');
   settings.type = 'button';
   settings.className = 'analytics-settings';
