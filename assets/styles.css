@@ -32,3 +32,6 @@ body{background:#050914}
 /* Decorative breadcrumb separators are visual spacing, not text. */
 .breadcrumbs>span:not(:last-child){display:none}
 .breadcrumbs>span:last-child{border-left:1px solid rgba(201,215,232,.45);padding-left:9px}
+
+/* Service copy remains readable and useful links are distinguishable. */
+.narrow p a,.article-body a,.narrow li a{color:#70dfff;text-decoration:underline;text-underline-offset:3px}.hero-grid>*{min-width:0}.hero h1{overflow-wrap:anywhere}.journey{grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr))}@media(max-width:680px){.journey{grid-template-columns:1fr}}
