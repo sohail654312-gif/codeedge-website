@@ -9,14 +9,9 @@
   try { saved = JSON.parse(localStorage.getItem(preferenceKey)); } catch (_) {}
   if (!saved || !['granted', 'denied'].includes(saved.choice) || !Number.isFinite(saved.at) || Date.now() - saved.at > maxAge) saved = null;
 
-  const panel = document.createElement('aside');
-  panel.className = 'analytics-choice';
-  panel.setAttribute('aria-label', 'Analytics preferences');
-  panel.hidden = true;
-  panel.innerHTML = '<div class="container"><h2>Optional website analytics</h2><p>With your permission, Google Analytics helps us understand page visits and use of our contact buttons. Analytics stays off unless you accept. You can change your choice at any time. <a href="/privacy/">Privacy policy</a></p><div class="analytics-actions"><button type="button" class="btn btn-secondary" data-analytics-accept>Accept analytics</button><button type="button" class="btn btn-secondary" data-analytics-reject>Reject analytics</button></div></div>';
-  const header = document.querySelector('.site-header');
-  if (header) header.after(panel);
-  else document.body.prepend(panel);
+  const panel = document.querySelector('[data-analytics-panel]');
+  if (!panel) return;
+  panel.hidden = Boolean(saved);
   const settings = document.createElement('button');
   settings.type = 'button';
   settings.className = 'analytics-settings';
@@ -64,7 +59,7 @@
   }
   panel.querySelector('[data-analytics-accept]').addEventListener('click', () => save('granted'));
   panel.querySelector('[data-analytics-reject]').addEventListener('click', () => save('denied'));
-  settings.addEventListener('click', () => { panel.hidden = false; panel.querySelector('button').focus(); });
+  settings.addEventListener('click', () => { document.documentElement.classList.remove('analytics-known'); panel.hidden = false; panel.querySelector('button').focus(); });
   document.addEventListener('click', e => {
     const link = e.target.closest('a[href]');
     if (!link) return;
