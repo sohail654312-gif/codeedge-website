@@ -1,0 +1,37 @@
+name: IndexNow - notify changed published pages
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - '**/index.html'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: codeedge-indexnow
+  cancel-in-progress: false
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate IndexNow inputs without network calls
+        run: python scripts/indexnow_submit.py --mode all --dry-run
+      - name: Notify IndexNow about changed canonical pages
+        if: github.event_name == 'push'
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
+        run: python scripts/indexnow_submit.py --mode changed --before "$BEFORE_SHA"
+      - name: Initial full canonical sitemap submission (manual only)
+        if: github.event_name == 'workflow_dispatch'
+        run: python scripts/indexnow_submit.py --mode all
