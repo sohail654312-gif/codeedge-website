@@ -28,7 +28,7 @@ jobs:
           SERVER_PID=$!
           trap 'kill $SERVER_PID || true' EXIT
           sleep 2
-          for path in / /business-os/ /contact/ /industries/plumbers/ /resources/what-does-an-ai-receptionist-do/; do
+          for path in / /business-os/ /contact/ /industries/plumbers/ /resources/what-does-an-ai-receptionist-do/ /marketing-automation/ /pakistan/ /growth-starter/ /assets/og-card.png; do
             curl --fail --silent --show-error "http://127.0.0.1:4173$path" >/dev/null
           done
           npx --yes pa11y@8 http://127.0.0.1:4173/ --runner axe --standard WCAG2AA --threshold 0

@@ -17,9 +17,12 @@ class AuditParser(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.title=False; self.title_text=[]; self.h1=0; self.meta_desc=False; self.canonical=None
         self.links=[]; self.images=[]; self.blank=[]; self.jsonld=[]; self.in_jsonld=False; self.json_buf=[]
-        self.lang=None
+        self.lang=None; self.meta={}; self.ids=set(); self.sources=[]
     def handle_starttag(self,tag,attrs):
         a=dict(attrs)
+        if a.get('id'): self.ids.add(a['id'])
+        if tag=='meta': self.meta[a.get('property') or a.get('name')]=a.get('content','')
+        if tag in {'script','img'} and a.get('src'): self.sources.append(a['src'])
         if tag=="html": self.lang=a.get("lang")
         if tag=="title": self.title=True
         if tag=="h1": self.h1+=1
@@ -65,6 +68,10 @@ for f in html_files:
         if p.h1!=1: errors.append(f"{rel}: expected one h1, found {p.h1}")
         if not notfound and not p.meta_desc: errors.append(f"{rel}: missing meta description")
         if not notfound:
+            if p.meta.get('og:image')!=DOMAIN+'/assets/og-card.png': errors.append(f"{rel}: missing PNG social image")
+            if p.meta.get('twitter:card')!='summary_large_image': errors.append(f"{rel}: missing Twitter sharing card")
+            if p.meta.get('og:title')!=title: errors.append(f"{rel}: sharing title differs from page title")
+            if 'noindex' in p.meta.get('robots',''): errors.append(f"{rel}: production page is noindex")
             if not p.canonical or not p.canonical.startswith(DOMAIN+"/"): errors.append(f"{rel}: invalid/missing canonical")
             elif p.canonical in canonicals: errors.append(f"{rel}: duplicate canonical with {canonicals[p.canonical]}")
             else: canonicals[p.canonical]=rel; production.append(p.canonical)
@@ -73,9 +80,13 @@ for f in html_files:
         except Exception as e: errors.append(f"{rel}: invalid JSON-LD: {e}")
     for img in p.images:
         if "alt" not in img and img.get("aria-hidden")!="true": errors.append(f"{rel}: image missing alt")
+        if not img.get('width') or not img.get('height'): errors.append(f"{rel}: image missing layout dimensions")
+    for src in p.sources:
+        if src.startswith('/') and not (ROOT/src.lstrip('/')).is_file(): errors.append(f"{rel}: missing asset {src}")
     for href,relattr in p.blank:
         if "noopener" not in relattr.split(): errors.append(f"{rel}: target=_blank missing noopener for {href}")
     for href in p.links:
+        if href.startswith('#') and href[1:] not in p.ids: errors.append(f"{rel}: missing anchor target {href}")
         if href.startswith(("mailto:","tel:","https://","http://","#")): continue
         if not href.startswith("/"): continue
         if href.startswith("/assets/") or href in {"/manifest.webmanifest","/robots.txt","/sitemap.xml"}:
