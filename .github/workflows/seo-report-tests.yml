@@ -1,0 +1,32 @@
+name: Test private SEO report code
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/seo_traffic_report.py'
+      - 'tests/test_seo_traffic_report.py'
+      - 'docs/seo-private-reporting.md'
+      - '.github/workflows/seo-report-tests.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/seo_traffic_report.py'
+      - 'tests/test_seo_traffic_report.py'
+      - '.github/workflows/seo-report-tests.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  safe-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Python syntax verification
+        run: python -m py_compile scripts/seo_traffic_report.py
+      - name: No-credential unit tests with fake API data
+        run: python -m unittest discover -s tests -p 'test_seo_traffic_report.py' -v
