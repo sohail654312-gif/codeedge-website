@@ -24,7 +24,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def find_key():
     matches = [p for p in ROOT.glob("*.txt")
-               if re.fullmatch(r"[a-f0-9]{32}\\.txt", p.name)
+               if re.fullmatch(r"[a-f0-9]{32}\.txt", p.name)
                and p.read_text(encoding="utf-8").strip() == p.stem]
     if len(matches) != 1:
         raise RuntimeError("Expected exactly one matching 32-hex IndexNow key file at site root")
