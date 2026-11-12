@@ -68,8 +68,8 @@
       try { if (new URL(link.href).hostname === 'wa.me') event('whatsapp_click'); } catch (_) {}
     }
   });
-  const form = document.querySelector('[data-form] form, form[data-form]');
-  if (form) form.addEventListener('submit', () => { if (form.checkValidity()) event('contact_request_prepared'); });
+  const form = document.querySelector('[data-enquiry]');
+  if (form) form.addEventListener('codeedge:request-prepared', () => event('contact_request_prepared'));
   if (saved?.choice === 'granted') start();
   else if (!saved) panel.hidden = false;
 })();
