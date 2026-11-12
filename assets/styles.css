@@ -42,3 +42,9 @@ body{background:#050914}
 
 /* Render the consent panel in its final position before first paint. */
 html:not(.analytics-ready) .analytics-choice,html.analytics-known .analytics-choice{display:none}
+
+#request-access{scroll-margin-top:6rem}
+@media(min-width:981px){#request-access{grid-template-columns:minmax(0,1.28fr) minmax(0,.72fr)}}
+.form-step h2,.request-preview h3{scroll-margin-top:6rem}
+.qualify .actions{flex-wrap:wrap}
+.request-preview pre{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit}
